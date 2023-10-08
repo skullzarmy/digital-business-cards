@@ -55,6 +55,8 @@ template.innerHTML = `
       width: 28px;
       object-fit: contain;
       margin-right: 10px;
+      padding: 0px;
+      box-sizing: border-box;
       mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="100" height="100" rx="50" ry="50"/></svg>');
       mask-composite: exclude;
     }
