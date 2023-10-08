@@ -3,10 +3,10 @@ name: Generate Docs
 on:
     push:
         branches:
-            - main
+            - doesnt-exist
     pull_request:
         branches:
-            - main
+            - doesnt-exist
 
 jobs:
     test:
