@@ -4,6 +4,10 @@
 
 A customizable web component for generating digital business cards. Easily embed a business card into your web page with various themes and font variants. This component is lightweight, easy to use, and fully customizable.
 
+![Jane Doe dark serif example business card](./Jane-Doe-digital-business-card.png)
+
+![John Doe light sans example business card](./John-Doe-digital-business-card.png)
+
 ## Table of Contents
 
 -   [Features](#features)
@@ -65,10 +69,6 @@ Here's a simple example to embed a digital business card into your web page:
 ```
 
 _View all variants on the [examples page](https://skullzarmy.github.io/digital-business-cards/example.html)_
-
-![Jane Doe dark serif example business card](./Jane-Doe-digital-business-card.png)
-
-![John Doe light sans example business card](./John-Doe-digital-business-card.png)
 
 ## Attributes
 
