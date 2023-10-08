@@ -1,6 +1,6 @@
 # Digital Business Card Web Component
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![maintained with hearth by skullzarmy](https://img.shields.io/badge/maintained%20with%20%E2%99%A5%20by-skullzarmy-ff1515.svg)](https://github.com/skullzarmy)
 
 A customizable web component for generating digital business cards. Easily embed a business card into your web page with various themes and font variants. This component is lightweight, easy to use, and fully customizable.
 
