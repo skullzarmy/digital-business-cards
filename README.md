@@ -106,7 +106,7 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 ## Contact
 
 -   **Author**: Joe Peterson
--   **Email**: joe@example.com
+-   **Email**: joe@joepeterson.work
 -   **Website**: https://joepeterson.work
 
 ## Acknowledgments
