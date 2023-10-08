@@ -154,9 +154,9 @@ class DigitalBusinessCard extends HTMLElement {
      * @param {string} newValue - New value of the attribute
      */
     attributeChangedCallback(name, oldValue, newValue) {
-        console.log(`attributeChangedCallback triggered for ${name}`);
-        console.log("Old value:", oldValue);
-        console.log("New value:", newValue);
+        // console.log(`attributeChangedCallback triggered for ${name}`);
+        // console.log("Old value:", oldValue);
+        // console.log("New value:", newValue);
         if (oldValue !== newValue) {
             this.updateCard();
         }
@@ -168,7 +168,7 @@ class DigitalBusinessCard extends HTMLElement {
     updateCard() {
         // Handle image
         const imageSrc = this.getAttribute("imageSrc");
-        console.log("Image Src in updateCard:", imageSrc); // Add this line
+        // console.log("Image Src in updateCard:", imageSrc); // Add this line
         const imageShape = this.getAttribute("imageShape");
         const imageElement = this.shadowRoot.querySelector(".image");
 

@@ -1,8 +1,12 @@
 # Digital Business Card Web Component
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![maintained with hearth by skullzarmy](https://img.shields.io/badge/maintained%20with%20%E2%99%A5%20by-skullzarmy-ff1515.svg)](https://github.com/skullzarmy)
 
 A customizable web component for generating digital business cards. Easily embed a business card into your web page with various themes and font variants. This component is lightweight, easy to use, and fully customizable.
+
+![Jane Doe dark serif example business card](./Jane-Doe-digital-business-card.png)
+
+![John Doe light sans example business card](./John-Doe-digital-business-card.png)
 
 ## Table of Contents
 
@@ -11,7 +15,9 @@ A customizable web component for generating digital business cards. Easily embed
 -   [Usage](#usage)
 -   [Attributes](#attributes)
 -   [Themes and Font Variants](#themes-and-font-variants)
+    -   [Examples](https://skullzarmy.github.io/digital-business-cards/example.html)
 -   [QR Code](#qr-code)
+-   [Roadmap](#roadmap)
 -   [Contributing](#contributing)
 -   [License](#license)
 -   [Contact](#contact)
@@ -63,9 +69,7 @@ Here's a simple example to embed a digital business card into your web page:
 </digital-business-card>
 ```
 
-![Jane Doe dark serif example business card](./Jane-Doe-digital-business-card.png)
-
-![John Doe light sans example business card](./John-Doe-digital-business-card.png)
+_View all variants on the [examples page](https://skullzarmy.github.io/digital-business-cards/example.html)_
 
 ## Attributes
 
@@ -96,6 +100,14 @@ Here's a simple example to embed a digital business card into your web page:
 ## QR Code
 
 The component automatically generates a QR code based on the provided contact information. Users can scan OR click the QR code to save the contact information to their device via standard vCard v3.0 formatting.
+
+## Roadmap
+
+1.  Add support for all standard social media links with logos from simple-icons
+1.  Add support for any Google font by name
+1.  Add custom theme color support
+1.  Add custom base font size support
+1.  Create component generator
 
 ## Contributing
 
