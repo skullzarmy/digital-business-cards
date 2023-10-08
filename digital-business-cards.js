@@ -1,4 +1,4 @@
-// TODO: Add social media links to the card. support a repeater field to add multiple links? each with a dropdown for the social media platform and a text input for the link. UI handled separately, but must process the data here.
+// TODO: Add social media links to the card. -- support an array of networks and links with icons
 
 /**
  * Digital Business Card Web Component
