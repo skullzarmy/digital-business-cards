@@ -93,7 +93,7 @@ Here's a simple example to embed a digital business card into your web page:
 
 ## QR Code
 
-The component automatically generates a QR code based on the provided contact information. Users can scan OR click the QR code to save the contact information to their device via standard vCard formatting.
+The component automatically generates a QR code based on the provided contact information. Users can scan OR click the QR code to save the contact information to their device via standard vCard v3.0 formatting.
 
 ## Contributing
 
