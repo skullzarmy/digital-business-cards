@@ -17,6 +17,7 @@ A customizable web component for generating digital business cards. Easily embed
 -   [Themes and Font Variants](#themes-and-font-variants)
     -   [Examples](https://skullzarmy.github.io/digital-business-cards/example.html)
 -   [QR Code](#qr-code)
+-   [Roadmap](#roadmap)
 -   [Contributing](#contributing)
 -   [License](#license)
 -   [Contact](#contact)
@@ -99,6 +100,14 @@ _View all variants on the [examples page](https://skullzarmy.github.io/digital-b
 ## QR Code
 
 The component automatically generates a QR code based on the provided contact information. Users can scan OR click the QR code to save the contact information to their device via standard vCard v3.0 formatting.
+
+## Roadmap
+
+1.  Add support for all standard social media links with logos from simple-icons
+1.  Add support for any Google font by name
+1.  Add custom theme color support
+1.  Add custom base font size support
+1.  Create component generator
 
 ## Contributing
 
