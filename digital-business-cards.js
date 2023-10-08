@@ -26,6 +26,7 @@ template.innerHTML = `
     :host {
       display: inline-block;
       margin: 14px;
+      font-size: var(--general-font-size, 16px);
     }
     .card {
       display: flex;
@@ -38,6 +39,7 @@ template.innerHTML = `
       background-color: var(--background-color, #fff);
       color: var(--text-color, #000);
       line-height: 1.5;
+      font-size: var(--general-font-size, 16px);
     }
     .text-container {
       display: flex;
@@ -146,7 +148,18 @@ class DigitalBusinessCard extends HTMLElement {
      * @return {Array} attributes to observe
      */
     static get observedAttributes() {
-        return ["name", "email", "phone", "website", "address", "theme", "fontVariant", "imageSrc", "imageShape"];
+        return [
+            "name",
+            "email",
+            "phone",
+            "website",
+            "address",
+            "theme",
+            "fontVariant",
+            "imageSrc",
+            "imageShape",
+            "fontSize",
+        ];
     }
 
     /**
@@ -255,17 +268,24 @@ class DigitalBusinessCard extends HTMLElement {
         const fontVariants = {
             sans: {
                 "--font-family": "'Rubik', sans-serif",
+                "--general-font-size": "16px",
             },
             serif: {
                 "--font-family": "'Playfair Display', serif",
+                "--general-font-size": "16px",
             },
             handwritten: {
                 "--font-family": "'Caveat', cursive",
+                "--general-font-size": "20px",
             },
             gothic: {
                 "--font-family": "'Carrois Gothic', sans-serif",
+                "--general-font-size": "16px",
             },
         };
+
+        const generalFontSize = this.getAttribute("fontSize") || "16px";
+        this.shadowRoot.querySelector(".card").style.setProperty("--general-font-size", generalFontSize);
 
         const finalStyles = { ...baseStyles[theme], ...fontVariants[fontVariant] };
 
