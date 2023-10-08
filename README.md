@@ -68,10 +68,10 @@ Here's a simple example to embed a digital business card into your web page:
 ## Attributes
 
 -   `name`: The name to display on the card.
--   `email`: The email address.
--   `phone`: The phone number.
--   `website`: The website URL.
--   `address`: The physical address.
+-   `email`: The email address. Builds mailto link.
+-   `phone`: The phone number. Builds tel link.
+-   `website`: The website URL. Builds standard href link.
+-   `address`: The physical address. Builds link to Google Maps.
 -   `theme`: The theme of the card (light or dark).
 -   `fontVariant`: The font variant (sans, serif, handwritten, gothic).
 -   `imageSrc`: The source for the profile image (supports Base64).
