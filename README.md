@@ -19,12 +19,14 @@ A customizable web component for generating digital business cards. Easily embed
 
 ## Features
 
-Customizable: Easily change the card's appearance with attributes.
-Themes: Light and dark themes available.
-Font Variants: Choose from a variety of font styles.
-QR Code: Automatically generates a QR code for contact information.
-Self-contained: No need for external image files; supports Base64 encoded images.
-Getting Started
+-   Customizable: Easily change the card's appearance with attributes.
+-   Themes: Light and dark themes available.
+-   Font Variants: Choose from a variety of font styles.
+-   QR Code: Automatically generates a QR code for contact information.
+-   Self-contained: No need for external image files; supports Base64 encoded images.
+
+## Getting Started
+
 To get started, include the following script tag in your HTML file:
 
 ```html
