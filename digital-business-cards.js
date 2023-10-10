@@ -322,8 +322,13 @@ class DigitalBusinessCard extends HTMLElement {
      */
     attributeChangedCallback(name, oldValue, newValue) {
         if (oldValue !== newValue) {
-            if (name === "fontVariant") {
-                this.loadFont(newValue);
+            if (name === "socialMedia") {
+                try {
+                    JSON.parse(newValue); // Validate the new value is a valid JSON string
+                } catch (e) {
+                    console.error("Invalid JSON format for socialMedia attribute:", e);
+                    return;
+                }
             }
             this.updateCard();
         }
@@ -384,16 +389,9 @@ class DigitalBusinessCard extends HTMLElement {
         // Handle social media links
         const socialMediaAttr = this.getAttribute("socialMedia");
         if (socialMediaAttr) {
-            let breakContainer = this.shadowRoot.querySelector(".break");
             let socialMediaContainer = this.shadowRoot.querySelector(".social-media-container");
 
-            // Create or reuse the break and social media container
-            if (!breakContainer) {
-                breakContainer = document.createElement("div");
-                breakContainer.classList.add("break");
-                this.shadowRoot.querySelector(".card").appendChild(breakContainer);
-            }
-
+            // Create or reuse the social media container
             if (!socialMediaContainer) {
                 socialMediaContainer = document.createElement("div");
                 socialMediaContainer.classList.add("social-media-container");
@@ -404,21 +402,14 @@ class DigitalBusinessCard extends HTMLElement {
             }
 
             const socialMediaLinks = JSON.parse(socialMediaAttr);
-            Object.keys(socialMediaLinks).forEach((key) => {
-                const link = socialMediaLinks[key];
-                let icon;
-
-                // Check if the key is a valid SVG string
-                if (key.startsWith("<svg") && key.endsWith("</svg>")) {
-                    icon = key;
-                } else {
-                    // Otherwise, look for a matching platform in the list
-                    icon = socialMediaIcons[key];
-                }
+            socialMediaLinks.forEach((linkObj) => {
+                const platform = linkObj.platform;
+                const url = linkObj.url;
+                const icon = socialMediaIcons[platform]; // Assuming socialMediaIcons is defined elsewhere
 
                 if (icon) {
                     const anchor = document.createElement("a");
-                    anchor.href = link;
+                    anchor.href = url;
                     anchor.target = "_blank";
                     anchor.rel = "noopener";
                     anchor.innerHTML = icon;
@@ -445,16 +436,18 @@ class DigitalBusinessCard extends HTMLElement {
     adjustSocialMediaLayout() {
         const container = this.shadowRoot.querySelector(".social-media-container");
         const icons = Array.from(container.querySelectorAll("a"));
-        const containerWidth = container.offsetWidth;
-        const iconWidth = icons[0].offsetWidth + 8; // Include margin
+        if (icons.length > 11) {
+            const containerWidth = container.offsetWidth;
+            const iconWidth = icons[0].offsetWidth + 8; // Include margin
 
-        let iconsPerRow = Math.floor(containerWidth / iconWidth);
-        if (icons.length > iconsPerRow) {
-            iconsPerRow = Math.ceil(icons.length / Math.ceil(icons.length / iconsPerRow));
-            const spaceBetweenIcons = (containerWidth - iconsPerRow * iconWidth) / (iconsPerRow - 1);
-            icons.forEach((icon, index) => {
-                icon.style.marginRight = `${spaceBetweenIcons}px`;
-            });
+            let iconsPerRow = Math.floor(containerWidth / iconWidth);
+            if (icons.length > iconsPerRow) {
+                iconsPerRow = Math.ceil(icons.length / Math.ceil(icons.length / iconsPerRow));
+                const spaceBetweenIcons = (containerWidth - iconsPerRow * iconWidth) / (iconsPerRow - 1);
+                icons.forEach((icon, index) => {
+                    icon.style.marginRight = `${spaceBetweenIcons}px`;
+                });
+            }
         }
     }
 
