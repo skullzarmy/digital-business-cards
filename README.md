@@ -62,6 +62,7 @@ Here's a simple example to embed a digital business card into your web page:
     phone="(555) 555-5555"
     website="https://example.org"
     address="1234 Main St. City ST 001100"
+    socialMedia: '{"facebook": "https://facebook.com/johndoe", "twitter": "https://twitter.com/johndoe","mastodon": "https://mastodon.social/johndoe", "linkedin": "https://linkedin.com/in/johndoe", "github": "https://github.com/johndoe"}',
     theme="dark"
     fontVariant="sans"
     imageSrc="data:image/webp;base64,..."
@@ -74,16 +75,17 @@ _View all variants on the [examples page](https://skullzarmy.github.io/digital-b
 ## Attributes
 
 -   `name`: The name to display on the card.
--   `email`: The email address. Builds mailto link.
--   `phone`: The phone number. Builds tel link.
--   `website`: The website URL. Builds standard href link.
+-   `email`: The email address. Builds `mailto` link.
+-   `phone`: The phone number. Builds `tel` link.
+-   `website`: The website URL. Builds standard `href` link.
 -   `address`: The physical address. Builds link to Google Maps.
+-   `socialMedia`: A JSON string containing key-value pairs for social media platforms and their URLs. Supports a predefined set of platforms.
 -   `theme`: The theme of the card (light or dark).
 -   `fontVariant`: The font variant (sans, serif, handwritten, gothic).
--   `imageSrc`: The source for the profile image (supports Base64).
+-   `imageSrc`: The source for the profile image (supports Base64 and image URLs).
 -   `imageShape`: The shape of the image (circle or square).
 
-## Themes and Font Variants
+## Theming
 
 ### Themes
 
@@ -94,8 +96,31 @@ _View all variants on the [examples page](https://skullzarmy.github.io/digital-b
 
 -   `sans`: Sans-serif font.
 -   `serif`: Serif font.
--   `handwritten`: Handwritten-style font.
--   `gothic`: Gothic-style font.
+-   `script`: Handwritten-style font.
+-   `display`: Display-style font.
+
+### Social Media Platforms
+
+The following platforms are supported (icons are predefined):
+
+_icons are from [simpleicons.org](https://simpleicons.org)_
+
+-   Facebook
+-   Twitter
+-   LinkedIn
+-   Mastodon
+-   GitHub
+-   GitLab
+-   Bitbucket
+-   Stack Overflow
+-   YouTube
+-   Instagram
+-   Pinterest
+-   Snapchat
+-   Reddit
+-   Tumblr
+-   Twitch
+-   Discord
 
 ## QR Code
 
@@ -103,8 +128,9 @@ The component automatically generates a QR code based on the provided contact in
 
 ## Roadmap
 
-1.  Add support for all standard social media links with logos from simple-icons
+1.  ~~Add support for all standard social media links with logos from simple-icons~~
 1.  Add support for any Google font by name
+    -   Progress made on refactoring the font loading to load only needed font.
 1.  Add custom theme color support
 1.  Add custom base font size support
 1.  Create component generator
@@ -127,6 +153,7 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 -   Google Fonts for providing the font styles.
 -   QRCode.js for generating QR codes.
+-   SimpleIcons.org for providing free and open SVG icons
 
 ## Generator
 
