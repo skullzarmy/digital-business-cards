@@ -383,26 +383,26 @@ class DigitalBusinessCard extends HTMLElement {
 
         // Handle social media links
         const socialMediaAttr = this.getAttribute("socialMedia");
-        let breakContainer = this.shadowRoot.querySelector(".break");
-        let socialMediaContainer = this.shadowRoot.querySelector(".social-media-container");
-
-        // Create or reuse the break and social media container
-        if (!breakContainer) {
-            breakContainer = document.createElement("div");
-            breakContainer.classList.add("break");
-            this.shadowRoot.querySelector(".card").appendChild(breakContainer);
-        }
-
-        if (!socialMediaContainer) {
-            socialMediaContainer = document.createElement("div");
-            socialMediaContainer.classList.add("social-media-container");
-            socialMediaContainer.style.marginTop = "16px";
-            this.shadowRoot.querySelector(".card").appendChild(socialMediaContainer);
-        } else {
-            socialMediaContainer.innerHTML = ""; // Clear existing icons
-        }
-
         if (socialMediaAttr) {
+            let breakContainer = this.shadowRoot.querySelector(".break");
+            let socialMediaContainer = this.shadowRoot.querySelector(".social-media-container");
+
+            // Create or reuse the break and social media container
+            if (!breakContainer) {
+                breakContainer = document.createElement("div");
+                breakContainer.classList.add("break");
+                this.shadowRoot.querySelector(".card").appendChild(breakContainer);
+            }
+
+            if (!socialMediaContainer) {
+                socialMediaContainer = document.createElement("div");
+                socialMediaContainer.classList.add("social-media-container");
+                socialMediaContainer.style.marginTop = "16px";
+                this.shadowRoot.querySelector(".card").appendChild(socialMediaContainer);
+            } else {
+                socialMediaContainer.innerHTML = ""; // Clear existing icons
+            }
+
             const socialMediaLinks = JSON.parse(socialMediaAttr);
             Object.keys(socialMediaLinks).forEach((key) => {
                 const link = socialMediaLinks[key];
