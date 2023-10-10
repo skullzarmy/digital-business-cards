@@ -62,7 +62,7 @@ Here's a simple example to embed a digital business card into your web page:
     phone="(555) 555-5555"
     website="https://example.org"
     address="1234 Main St. City ST 001100"
-    socialMedia: '{"facebook": "https://facebook.com/johndoe", "twitter": "https://twitter.com/johndoe","mastodon": "https://mastodon.social/johndoe", "linkedin": "https://linkedin.com/in/johndoe", "github": "https://github.com/johndoe"}',
+    socialMedia='[{"platform": "facebook", "url": "https://facebook.com/johndoe"}, {"platform": "twitter", "url": "https://twitter.com/johndoe"}, {"platform": "mastodon", "url": "https://mastodon.social/johndoe"}]'
     theme="dark"
     fontVariant="sans"
     imageSrc="data:image/webp;base64,..."
@@ -79,7 +79,7 @@ _View all variants on the [examples page](https://skullzarmy.github.io/digital-b
 -   `phone`: The phone number. Builds `tel` link.
 -   `website`: The website URL. Builds standard `href` link.
 -   `address`: The physical address. Builds link to Google Maps.
--   `socialMedia`: A JSON string containing key-value pairs for social media platforms and their URLs. Supports a predefined set of platforms.
+-   `socialMedia`: An array of objects, each containing a `platform` and a `url`. The `platform` should match one of the supported social media platforms, and `url` should be the full URL to your profile on that platform.
 -   `theme`: The theme of the card (light or dark).
 -   `fontVariant`: The font variant (sans, serif, handwritten, gothic).
 -   `imageSrc`: The source for the profile image (supports Base64 and image URLs).
@@ -121,6 +121,16 @@ _icons are from [simpleicons.org](https://simpleicons.org)_
 -   Tumblr
 -   Twitch
 -   Discord
+
+To specify social media links, use the socialMedia attribute with an array of objects. Each object should have a platform and a url. For example:
+
+```json
+[
+    { "platform": "facebook", "url": "https://facebook.com/johndoe" },
+    { "platform": "twitter", "url": "https://twitter.com/johndoe" },
+    { "platform": "mastodon", "url": "https://mastodon.social/johndoe" }
+]
+```
 
 ## QR Code
 
