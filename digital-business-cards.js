@@ -160,6 +160,7 @@ template.innerHTML = `
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
+      margin-top: 16px;
     }
     .social-media-container a {
       margin: 10px 4px;
@@ -382,15 +383,26 @@ class DigitalBusinessCard extends HTMLElement {
 
         // Handle social media links
         const socialMediaAttr = this.getAttribute("socialMedia");
-        // const socialMediaContainer = this.shadowRoot.querySelector(".social-media-container");
-        // socialMediaContainer.innerHTML = ""; // Clear existing icons
+        let breakContainer = this.shadowRoot.querySelector(".break");
+        let socialMediaContainer = this.shadowRoot.querySelector(".social-media-container");
 
-        if (socialMediaAttr) {
-            const breakContainer = document.createElement("div");
+        // Create or reuse the break and social media container
+        if (!breakContainer) {
+            breakContainer = document.createElement("div");
             breakContainer.classList.add("break");
-            const socialMediaContainer = document.createElement("div");
+            this.shadowRoot.querySelector(".card").appendChild(breakContainer);
+        }
+
+        if (!socialMediaContainer) {
+            socialMediaContainer = document.createElement("div");
             socialMediaContainer.classList.add("social-media-container");
             socialMediaContainer.style.marginTop = "16px";
+            this.shadowRoot.querySelector(".card").appendChild(socialMediaContainer);
+        } else {
+            socialMediaContainer.innerHTML = ""; // Clear existing icons
+        }
+
+        if (socialMediaAttr) {
             const socialMediaLinks = JSON.parse(socialMediaAttr);
             Object.keys(socialMediaLinks).forEach((key) => {
                 const link = socialMediaLinks[key];
@@ -413,8 +425,6 @@ class DigitalBusinessCard extends HTMLElement {
                     socialMediaContainer.appendChild(anchor);
                 }
             });
-            this.shadowRoot.querySelector(".card").appendChild(breakContainer);
-            this.shadowRoot.querySelector(".card").appendChild(socialMediaContainer);
             this.adjustSocialMediaLayout();
         }
 
