@@ -14,7 +14,7 @@ A customizable web component for generating digital business cards. Easily embed
 -   [Getting Started](#getting-started)
 -   [Usage](#usage)
 -   [Attributes](#attributes)
--   [Themes and Font Variants](#themes-and-font-variants)
+-   [Theming](#theming)
     -   [Examples](https://skullzarmy.github.io/digital-business-cards/example.html)
 -   [QR Code](#qr-code)
 -   [Roadmap](#roadmap)
