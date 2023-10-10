@@ -14,7 +14,7 @@ A customizable web component for generating digital business cards. Easily embed
 -   [Getting Started](#getting-started)
 -   [Usage](#usage)
 -   [Attributes](#attributes)
--   [Themes and Font Variants](#themes-and-font-variants)
+-   [Theming](#theming)
     -   [Examples](https://skullzarmy.github.io/digital-business-cards/example.html)
 -   [QR Code](#qr-code)
 -   [Roadmap](#roadmap)
@@ -121,6 +121,8 @@ _icons are from [simpleicons.org](https://simpleicons.org)_
 -   Tumblr
 -   Twitch
 -   Discord
+
+**I will accept requests for new icons. Just open an issue on Github. Please provide a link to the icon on simpleicons.org or provide a source for an SVG file with an open license. If it fits the aesthetic of the rest of the icons I will include.**
 
 To specify social media links, use the socialMedia attribute with an array of objects. Each object should have a platform and a url. For example:
 
