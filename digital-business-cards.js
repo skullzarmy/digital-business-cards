@@ -161,6 +161,7 @@ template.innerHTML = `
       flex-wrap: wrap;
       justify-content: space-evenly;
       margin-top: 16px;
+      width: 100%;
     }
     .social-media-container a {
       margin: 10px 4px;
@@ -405,7 +406,7 @@ class DigitalBusinessCard extends HTMLElement {
             socialMediaLinks.forEach((linkObj) => {
                 const platform = linkObj.platform;
                 const url = linkObj.url;
-                const icon = socialMediaIcons[platform]; // Assuming socialMediaIcons is defined elsewhere
+                const icon = socialMediaIcons[platform];
 
                 if (icon) {
                     const anchor = document.createElement("a");
