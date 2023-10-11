@@ -4,7 +4,7 @@
  * @author Joe Peterson
  * @link https://joepeterson.work
  * @year 2023
- * @version 2.0.0
+ * @version 2.0.1
  * @description A web component that displays a digital business card.
  */
 
@@ -174,6 +174,43 @@ template.innerHTML = `
       height: 100%;
       fill: var(--text-color, #000);
     }
+    /* Media query for mobile screens */
+  @media screen and (max-width: 640px) {
+    :host, :host * {
+      font-size: var(--mobile-font-size, 12px);
+    }
+    .card {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      padding: 8px;
+      font-size: var(--mobile-font-size, 12px);
+    }
+    .text-container {
+      flex-direction: column;
+      align-items: center;
+      flex-grow: 1;
+      width: 100%;
+    }
+    .name-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    .name {
+      font-size: var(--mobile-font-size, 12px);
+    }
+    .image {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+    .qr-container {
+      margin-left: 0;
+      margin-top: 16px;
+    }
+    .social-media-container {
+      justify-content: center;
+    }
+  }
   </style>
   <div class="card">
     <div class="text-container">
@@ -212,21 +249,29 @@ class DigitalBusinessCard extends HTMLElement {
         sans: {
             "--font-family": "'Carrois Gothic', sans-serif",
             "--general-font-size": "16px",
+            "--mobile-font-size": "14px",
+            "--name-font-size": "16px",
             "--line-height": "1.25em",
         },
         serif: {
             "--font-family": "'Playfair Display', serif",
             "--general-font-size": "16px",
+            "--mobile-font-size": "14px",
+            "--name-font-size": "16px",
             "--line-height": "1.3em",
         },
         script: {
             "--font-family": "'Nanum Pen Script', cursive",
             "--general-font-size": "24px",
+            "--mobile-font-size": "18px",
+            "--name-font-size": "26px",
             "--line-height": "0.9em",
         },
         display: {
             "--font-family": "'Playfair Display SC', sans-serif",
             "--general-font-size": "16px",
+            "--mobile-font-size": "14px",
+            "--name-font-size": "18px",
             "--line-height": "1.25em",
         },
     };
