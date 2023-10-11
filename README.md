@@ -13,6 +13,7 @@ A customizable web component for generating digital business cards. Easily embed
 -   [Features](#features)
 -   [Getting Started](#getting-started)
 -   [Usage](#usage)
+    -   [Generator](#generator)
 -   [Attributes](#attributes)
 -   [Theming](#theming)
     -   [Examples](https://skullzarmy.github.io/digital-business-cards/example.html)
@@ -71,6 +72,10 @@ Here's a simple example to embed a digital business card into your web page:
 ```
 
 _View all variants on the [examples page](https://skullzarmy.github.io/digital-business-cards/example.html)_
+
+### Generator
+
+You can utilize my generator tool to setup this Web Component with your information. It will automatically encode your image in base64 for portability! Check it out on my blog, [https://SoCalTechLab.com/utils/digital-business-card-generator/](https://socaltechlab.com/utils/digital-business-card-generator/)
 
 ## Attributes
 
@@ -166,7 +171,3 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 -   Google Fonts for providing the font styles.
 -   QRCode.js for generating QR codes.
 -   SimpleIcons.org for providing free and open SVG icons
-
-## Generator
-
-TBD: Link to the generator for this component will be added soon.
